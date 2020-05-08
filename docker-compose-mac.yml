@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  bugwarrior:
+    environment:
+      - JIRA_PASS=${JIRA_PASS}
+    volumes:
+      - /Users/simonwjackson/storage/docker/workstation/home/keys/task:/root/keys/task:ro
+      - type: bind
+        source: /Users/simonwjackson/storage/docker/workstation/home/.config/task/rc
+        target: /root/.taskrc
+      - type: bind
+        source: /Users/simonwjackson/storage/code/bottomline/bottomline-bugwarrior/bugwarriorrc
+        target: /root/.config/bugwarrior/bugwarriorrc 

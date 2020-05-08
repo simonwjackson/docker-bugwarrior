@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  bugwarrior:
+    environment:
+      - GITLAB_PASS=${GITLAB_PASS}
+      - GITHUB_PASS=${GITHUB_PASS}
+    volumes:
+      - /mnt/user/workstation/keys/task:/root/keys/task:ro
+      - type: bind
+        source: /mnt/user/workstation/.config/task/rc
+        target: /root/.taskrc
+      - type: bind
+        source: /mnt/user/workstation/.config/bugwarrior/bugwarriorrc
+        target: /root/.config/bugwarrior/bugwarriorrc
