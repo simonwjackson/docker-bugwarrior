@@ -1,0 +1,6 @@
+version: "3.7"
+services:
+  bugwarrior:
+    build:
+      context: .
+    entrypoint: "watch -n 900 task sync && bugwarrior-pull && task sync"
